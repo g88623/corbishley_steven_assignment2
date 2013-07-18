@@ -4,25 +4,36 @@
 // My SDI Project 2 JavaScript file.
 
 // My Variables
-var myQueueName = "Steven\'s queue"; // String
+var myQueueName = "Team Case Queue"; // String
 var numOfCases = 5; // Number
-var helperNames = ["Bob", "Mike", "Chris"]; // Array
+var workerNames = ["Steven", "Bob", "Mike", "Chris"]; // Array
+
+// Console Log Function
+var say = function ( textToOutput ) {
+	console.log ( textToOutput );
+}
 
 // My Procedure
-var hasCases = function( casesInQueue ) { // Procedure takes an Argument.
-	if(casesInQueue > 0) { // My Argument Conditional
-		console.log("The queue has cases. There are " + casesInQueue + " cases."); // If True, Output 1
+var hasCases = function ( casesInQueue ) { // Procedure takes an Argument.
+	if ( casesInQueue > 0 ) { // My Argument Conditional
+		say ("The queue has cases. There are " + casesInQueue + " cases."); // If True, Output 1
 	} else {
-		//console.log("The queue is currently empty."); // If False, Output 2
+		say ("The queue is currently empty."); // If False, Output 2
 	}
 }
 
 // My Boolean Function
-	// Boolean Function takes in two Arguments.
-	// Compares the two arguments.
-		// If True, Output 1
-		// If False, Output 2
-		// Return Boolean
+var casesInCorrectQueue = function ( incorrectCases, casesInQueue ) { // Boolean Function takes in two Arguments.
+	var valueToReturn;
+	if( incorrectCases != casesInQueue ) { // Compares the two arguments.
+		say ("There are " + (casesInQueue-incorrectCases) + " cases that belong in this queue."); // If True, Output 1
+		valueToReturn = true;
+	} else {
+		say ("There are no cases in this queue that belong in this queue."); // If False, Output 2
+		valueToReturn = false;
+	}
+	return valueToReturn; // Return Boolean
+}
 
 // My Number Function
 	// Number Function takes a Number argument.
@@ -44,8 +55,9 @@ var hasCases = function( casesInQueue ) { // Procedure takes an Argument.
 		// If True, performs Math, Outputs, and continues For Loop.
 		// If False, returns an Array.
 
-
 // My Returned Values
+var correctQueue = casesInCorrectQueue( 1, numOfCases );
 
 // My Output
 hasCases(numOfCases);
+say ("It is " + correctQueue + " that at least one case belongs in this queue.");
