@@ -5,8 +5,8 @@
 
 // My Variables
 var myQueueName = "Team Case Queue"; // String
-var numOfCases = 5; // Number
-var workerNames = ["Steven", "Bob", "Mike", "Chris"]; // Array
+var numOfCases = 15; // Number
+var helperNames = ["Bob", "Mike", "Chris"]; // Array
 
 // Console Log Function
 var say = function ( textToOutput ) {
@@ -36,11 +36,17 @@ var casesInCorrectQueue = function ( incorrectCases, casesInQueue ) { // Boolean
 }
 
 // My Number Function
-	// Number Function takes a Number argument.
-	// Includes local variables.
-	// Enters While Loop.
-		// If True, Perform Math, Output, and continue loop.
-		// If False, finish loop and return Number.
+var workQueue = function ( casesInQueue ) { // Number Function takes a Number argument.
+	var bandwidthForCases = 5; // Includes local variables.
+	while ( bandwidthForCases > 0 ) { // Enters While Loop.
+		bandwidthForCases--;
+		casesInQueue--;
+		say ("I took one case, and there are now " + casesInQueue + " cases remaining."); // If True, Perform Math, Output, and continue loop.
+	}
+	say ("I have reached my bandwidth for cases. There are " + casesInQueue + " cases remaining."); 
+	numOfCases = casesInQueue;
+	return casesInQueue; // If False, finish loop and return Number.
+}
 
 // My String Function
 	// String Function takes in two String arguments.
@@ -55,9 +61,12 @@ var casesInCorrectQueue = function ( incorrectCases, casesInQueue ) { // Boolean
 		// If True, performs Math, Outputs, and continues For Loop.
 		// If False, returns an Array.
 
+
 // My Returned Values
+hasCases(numOfCases);
 var correctQueue = casesInCorrectQueue( 1, numOfCases );
+var workOnCases = workQueue(numOfCases);
 
 // My Output
-hasCases(numOfCases);
 say ("It is " + correctQueue + " that at least one case belongs in this queue.");
+say ("After working cases from the queue on my own, there were " + workOnCases + " cases remaining in the queue.");
