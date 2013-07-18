@@ -4,15 +4,18 @@
 // My SDI Project 2 JavaScript file.
 
 // My Variables
-	// String
-	// Number
-	// Array
+var myQueueName = "Steven\'s queue"; // String
+var numOfCases = 5; // Number
+var helperNames = ["Bob", "Mike", "Chris"]; // Array
 
 // My Procedure
-	// Procedure takes an Argument.
-	// My Argument Conditional
-		// If True, Output 1
-		// If False, Output 2
+var hasCases = function( casesInQueue ) { // Procedure takes an Argument.
+	if(casesInQueue > 0) { // My Argument Conditional
+		console.log("The queue has cases. There are " + casesInQueue + " cases."); // If True, Output 1
+	} else {
+		//console.log("The queue is currently empty."); // If False, Output 2
+	}
+}
 
 // My Boolean Function
 	// Boolean Function takes in two Arguments.
@@ -45,3 +48,4 @@
 // My Returned Values
 
 // My Output
+hasCases(numOfCases);
